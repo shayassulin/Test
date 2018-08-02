@@ -1,21 +1,22 @@
 {
-	"objects": [{
+	"objects": [
+	{
 		"applicationVersions": ["Local|app1"],
 		"ownerParties": ["superuser@ca.com"],
 		"version": "2",
-		"name": "r1",
+		"name": "${p1}",
 		"kind": "Release"
 	},
 	{
 		"isApprovalRequired": false,
 		"approvalGate": "MANUAL",
-		"release": "r1/2",
+		"release": "${p1}/2",
 		"name": "p1",
 		"kind": "Phase"
 	},
 	{
 		"isDisabled": false,
-		"phase": "r1/2/p1",
+		"phase": "${p1}/2/p1",
 		"name": "t1",
 		"kind": "Task"
 	}]

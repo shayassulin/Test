@@ -1,0 +1,12 @@
+{
+  "reference": {
+    "url": "",
+    "username": "",
+    "password": ""
+  },
+  "parameters": [
+    {
+      "name": "p1",
+      "value": "xxx2"
+    }]
+}
