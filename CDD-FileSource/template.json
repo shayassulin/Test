@@ -1,9 +1,5 @@
 {
-	"parameters":[
-		{"name":"t1","value":"true"}
-	],
-
-
+	
 	"objects": [{
 		"application": "Local|ss_app1",
 		"name": "1",
