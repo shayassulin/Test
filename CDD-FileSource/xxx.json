@@ -1,1 +1,73 @@
-asd
+{
+	"parameters":[
+		{"name":"t1","value":"true"}
+	],
+
+
+	"objects": [{
+		"application": "Local|ss_app1",
+		"name": "1",
+		"kind": "ApplicationVersion"
+	},
+	{
+		"runOnCreation": false,
+		"ownerParties": ["superuser@ca.com"],
+		"applicationVersions": ["Local|ss_app1/1"],
+		"version": "4",
+		"name": "sss_r1",
+		"kind": "Release"
+	},
+	{
+		"name": "ss_T1",
+		"release": "sss_r1/4",
+		"scope": "PHASE_SCOPE",
+		"value": "RTValue",
+		"kind": "ReleaseToken"
+	},
+	{
+		"release": "sss_r1/4",
+		"scope": "PHASE_SCOPE",
+		"value": "v3",
+		"name": "T2",
+		"kind": "ReleaseToken"
+	},
+	{
+		"isApprovalRequired": false,
+		"release": "sss_r1/4",
+		"environments": ["ss_e1"],
+		"approvalGate": "MANUAL",
+		"skipTasksWithUnchangedApplications": true,
+		"name": "p1",
+		"kind": "Phase"
+	},
+	{
+		"phase": "sss_r1/4/p1",
+		"applicationVersions": ["Local|ss_app1/1"],
+		"isDisabled": false,
+		"name": "t1",
+		"kind": "Task"
+	},
+	{
+		"previousTasks": ["t1"],
+		"phase": "sss_r1/4/p1",
+		"applicationVersions": ["Local|ss_app1/1"],
+		"isDisabled": false,
+		"name": "t2",
+		"kind": "Task",
+		"plugin": "Email/1.1",
+		"endpoint": "ep",
+		"parameters": {
+			"subject": "subject %ReleaseToken/ss_T1%%ss_app1.last_successful_change%",
+			"to": "shay.asssulin@jhdfjd.com",
+			"body": "This is the body %T2% %%T2%% %T2%%%ReleaseToken/ss_T1%%"
+		},
+		"type": "Send Email"
+	},
+	{
+		"previousTasks": ["t2"],
+		"phase": "sss_r1/4/p1",
+		"isDisabled": "${t1}",
+		"name": "t3",
+		"kind": "Task"
+	}]
+}
