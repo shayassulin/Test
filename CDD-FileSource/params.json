@@ -1,7 +1,7 @@
 {
 	"reference":
 		{"fileSource":"sss_fs1",
-		"fileName":"template.json"}
+		"fileName":"CDD-FileSource/template.json"}
 	,
 
 "parameters":[
