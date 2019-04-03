@@ -1,8 +1,8 @@
 {
-	"reference":[
+	"reference":
 		{"fileSource":"sss_fs1",
 		"fileName":"template.json"}
-	],
+	,
 
 "parameters":[
 		{"name":"t1","value":"true"}
